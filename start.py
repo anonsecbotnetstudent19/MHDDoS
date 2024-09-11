@@ -1155,19 +1155,13 @@ def downloadsocks(choice):
     if choice == "5":
         f = open(out_file, 'wb')
         try:
-            r = requests.get("https://api.proxyscrape.com/?request=displayproxies&proxytype=socks5&country=all",
+            r = requests.get("https://proxyspace.pro/socks5.txt",
                              timeout=5)
             f.write(r.content)
         except:
             pass
         try:
-            r = requests.get("https://www.proxy-list.download/api/v1/get?type=socks5", timeout=5)
-            f.write(r.content)
-            f.close()
-        except:
-            pass
-        try:
-            r = requests.get("https://www.proxyscan.io/download?type=socks5", timeout=5)
+            r = requests.get("https://raw.githubusercontent.com/roosterkid/openproxylist/main/SOCKS5_RAW.txt", timeout=5)
             f.write(r.content)
             f.close()
         except:
@@ -1175,18 +1169,24 @@ def downloadsocks(choice):
         try:
             r = requests.get("https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks5.txt", timeout=5)
             f.write(r.content)
+            f.close()
+        except:
+            pass
+        try:
+            r = requests.get("https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt", timeout=5)
+            f.write(r.content)
         except:
             pass
         try:
             r = requests.get(
-                "https://proxy-daily.com/api/getproxylist?apikey=3Rr6lb-yfeQeotZ2-9M76QI&format=ipport&type=socks5&lastchecked=60",
+                "https://raw.githubusercontent.com/hookzof/socks5_list/master/proxy.txt",
                 timeout=5)
             f.write(r.content)
         except:
             pass
         try:
             r = requests.get(
-                "https://gist.githubusercontent.com/Azuures/1e0cb7a1097c720b4ed2aa63acd82179/raw/97d2d6a11873ffa8ca763763f7a5dd4035bcf95f/fwefnwex",
+                "https://raw.githubusercontent.com/mmpx12/proxy-list/master/socks5.txt",
                 timeout=5)
             f.write(r.content)
             f.close()
